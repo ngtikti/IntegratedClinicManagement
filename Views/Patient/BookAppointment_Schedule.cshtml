@@ -12,6 +12,9 @@
             <tr>
 
                 <th>
+                    @Html.DisplayNameFor(model => model.Doctor.Name)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Time)
                 </th>
 
@@ -23,6 +26,9 @@
             {
 <tr>
 
+    <td>
+        @ViewData["DocName"]
+    </td>
     <td>
         @Html.DisplayFor(modelItem => item.Time)
     </td>

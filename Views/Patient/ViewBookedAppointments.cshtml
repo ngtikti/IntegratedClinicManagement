@@ -15,15 +15,11 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Timeslot)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Consultation_Remarks)
-                </th>
+                
                 <th>
                     @Html.DisplayNameFor(model => model.Consultation_Status)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Bill)
-                </th>
+                
                 <th></th>
             </tr>
         </thead>
@@ -37,15 +33,11 @@
     <td>
         @Html.DisplayFor(modelItem => item.Timeslot)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Consultation_Remarks)
-    </td>
+    
     <td>
         @Html.DisplayFor(modelItem => item.Consultation_Status)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Bill)
-    </td>
+    
     <td>
         @*<a asp-action="Edit" asp-route-id="@item.Consultation_Id">Edit</a> |*@
         @Html.ActionLink("Cancel Appointment", "CancelAppointment", "Patient", new { consultationid = item.Consultation_Id })

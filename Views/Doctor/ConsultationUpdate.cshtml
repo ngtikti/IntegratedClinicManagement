@@ -1,6 +1,6 @@
 ﻿@model ClinicManagementProject.Models.ConsultationDetail
-
-@{Layout = "~/views/Doctor/_Layout.cshtml";}
+@*@{Layout = "~/views/Doctor/_Layout.cshtml";}*@
+@{Layout = "~/views/Doctor/_DoctorLayout.cshtml";}
 
 <body>
 
@@ -128,9 +128,10 @@ else
                         <td>@patientHistory[i].Consultation_Date</td>
                         <td>@docName</td>
                         <td>@patientHistory[i].Consultation_Remarks</td>
-                    </tr>}
+                    </tr>
+}
 
-                                    }
+            }
 
                                 </table> } }
 

@@ -131,6 +131,8 @@ namespace ClinicManagementProject.Controllers
                 ICollection<DoctorSchedule> nulldocsch = new List<DoctorSchedule>();
                 return View(nulldocsch);
             }
+            Doctor docplaceholder = _doctorrepo.GetAll().SingleOrDefault(d => d.Doctor_Id == id);
+            ViewData["DocName"] = docplaceholder.Name;
             return View(doctorSchedule.Where(ds => ds.Patient_Id == null)); //displaying only the slots where patient_id has not been input
         }
 

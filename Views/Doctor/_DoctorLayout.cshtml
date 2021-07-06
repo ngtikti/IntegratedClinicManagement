@@ -14,7 +14,7 @@
         </div>
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,15 +24,19 @@
                             @Html.ActionLink("Home Page", "DoctorConsole", "Doctor", null, new { @class = "nav-link" })
                         </li>
                         @*<li class="nav-item">
-                                @Html.ActionLink("Sign In", "Login", "User", null, new { @class = "nav-link" })
-                            </li>
-                            <li class="nav-item">
-                                @Html.ActionLink("Sign up", "Register", "User", null, new { @class = "nav-link" })
-                            </li>
-                            <li class="nav-item">
-                                @Html.ActionLink("Home Page", "Index", "Home", null, new { @class = "nav-link" })
-                            </li>*@
+                    @Html.ActionLink("Sign In", "Login", "User", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Sign up", "Register", "User", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Home Page", "Index", "Home", null, new { @class = "nav-link" })
+                </li>*@
                     </ul>
+                </div>
+                <div style="text-align:right;">
+                    @Html.ActionLink("Logout", "Login", "Doctor", null, new { @class = "nav-link-dark" })
+
                 </div>
             </nav>
         </div>

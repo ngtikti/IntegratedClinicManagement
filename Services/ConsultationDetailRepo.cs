@@ -74,7 +74,7 @@ namespace ClinicManagementProject.Services
         {
             try
             {
-                var consultationDetail = _context.ConsultationDetails.SingleOrDefault(cd=>cd.Consultation_Id ==k);
+                var consultationDetail = _context.ConsultationDetails.Include(c=>c.Doctor).Include(c=>c.Patient).SingleOrDefault(cd=>cd.Consultation_Id ==k);
                 return consultationDetail;
             }
             catch (Exception e)
@@ -118,7 +118,7 @@ namespace ClinicManagementProject.Services
                 _logger.LogInformation("No schedule found");
                 return null;
             }
-            return _context.ConsultationDetails.Include(c => c.Patient).ToList();
+            return _context.ConsultationDetails.Include(c => c.Patient).Include(c=>c.Doctor).ToList();
         }
 
 
