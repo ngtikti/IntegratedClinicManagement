@@ -227,8 +227,10 @@ namespace ClinicManagementProject.Controllers
             try
             {
                 //ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(doc_id); //getting all the doctorschedule
-                ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(consDocId); //getting all the doctorschedule
+                Doctor docplaceholder = _doctorrepo.GetAll().SingleOrDefault(d => d.Username == TempData.Peek("DoctorUsername").ToString());
 
+                //ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(consDocId); //getting all the doctorschedule
+                ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(docplaceholder.Doctor_Id);
                 //fill all Patients, Mona added 6th July
                 foreach (DoctorSchedule schedule in doctorSchedule)
                 {
