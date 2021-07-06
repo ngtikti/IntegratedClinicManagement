@@ -218,7 +218,7 @@ namespace ClinicManagementProject.Controllers
         //Doctor console to link to all other modules
         public ActionResult DoctorConsole(Doctor d) //...since model is patient, passed has to be patient or child of patient, else null. to show patient console page...have action links to bookappointment (view doctor, view doctorschedule,update doctorschedule), access reportandbill, cancel existing appointment
         {
-            Doctor doc = _doctorrepo.Get(d.Username);//calling the actual patient using username in order to get the name to say welcome lol
+            Doctor doc = _doctorrepo.Get(TempData.Peek("DoctorUsername").ToString());//calling the actual patient using username in order to get the name to say welcome lol
             ViewData["Message"] = doc.Name;
             return View(doc);//...pat is to make sure model is refering to pat....else null error....should pass model.Username to the action links
         }
@@ -229,6 +229,11 @@ namespace ClinicManagementProject.Controllers
                 //ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(doc_id); //getting all the doctorschedule
                 ICollection<DoctorSchedule> doctorSchedule = _doctorschedulerepo.GetAll(consDocId); //getting all the doctorschedule
 
+                //fill all Patients, Mona added 6th July
+                foreach (DoctorSchedule schedule in doctorSchedule)
+                {
+                    schedule.Patient = _patientrepo.GetAll().SingleOrDefault(p => p.Patient_Id == schedule.Patient_Id);
+                }
                 return View(doctorSchedule);
             }
             catch (Exception e)

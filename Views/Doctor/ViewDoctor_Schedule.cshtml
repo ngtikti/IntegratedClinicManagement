@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<ClinicManagementProject.Models.DoctorSchedule>
-@*@{Layout = "~/views/Doctor/_Layout.cshtml";}*@
+
 @{Layout = "~/views/Doctor/_DoctorLayout.cshtml";}
 
 <body>
     <p>
-        <a asp-action="Create">Create New</a>
+        <br /><br />
+        <b>Available bookings for you</b>
     </p>
     <form method="get" name="frmViewDoctorSchedule">
-        <table class="table" width="20%">
+        <table class="table" width="50%" align="center">
             <thead>
                 <tr>
 
@@ -16,7 +17,11 @@
                     </th>
 
                     <th>
-                        @Html.DisplayNameFor(model => model.Patient_Id)
+                        @Html.DisplayNameFor(model => model.Patient.Name)
+                    </th>
+
+                    <th>
+                        Click to Start Consultation
                     </th>
 
                 </tr>
@@ -32,24 +37,22 @@
         </td>
 
         <td>
-            @Html.DisplayFor(modelItem => item.Patient_Id)
+            @Html.DisplayFor(modelItem => item.Patient.Name)
         </td>
 
         <td>
             @Html.ActionLink("Doctor Consultations", "ConsultationUpdate", new { timeSlotId = item.Timeslot_Id, patId = item.Patient_Id, docId = item.Doctor_Id })
             <input name="consDocId" type="hidden" value="@item.Doctor_Id" />
         </td>
-    </tr>
- }
-}
-else
-{
-<tr>
-    <td colspan="2">
-        No Consultation slot booked for you
-    </td>
-</tr>
-}
+    </tr> }
+                }
+                else
+                {
+    <tr>
+        <td colspan="2">
+            No Consultation slot booked for you
+        </td>
+    </tr>}
 
             </tbody>
         </table>

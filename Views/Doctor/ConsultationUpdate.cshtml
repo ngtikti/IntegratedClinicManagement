@@ -1,5 +1,5 @@
 ﻿@model ClinicManagementProject.Models.ConsultationDetail
-@*@{Layout = "~/views/Doctor/_Layout.cshtml";}*@
+
 @{Layout = "~/views/Doctor/_DoctorLayout.cshtml";}
 
 <body>
@@ -18,7 +18,7 @@ else
 {
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="ConsultationUpdate" method="post">
+        <form asp-action="ConsultationUpdate" name="ConsultationUpdate" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Consultation_Id" name="consId" value="@Model.Consultation_Id" />
             <input type="hidden" asp-for="Patient_Id" name="consPatId" value="@Model.Patient_Id" />
@@ -67,8 +67,9 @@ else
                         <label asp-for="Consultation_Remarks" class="control-label">Consultation Remark</label>
                     </td>
                     <td>
-                        <textarea asp-for="Consultation_Remarks" name="consRemarks" class="form-control-lg">@Model.Consultation_Remarks</textarea>
+                        <textarea asp-for="Consultation_Remarks" name="consRemarks" id="consRemarks" required class="form-control-lg">@Model.Consultation_Remarks</textarea>
                         <span asp-validation-for="Consultation_Remarks" class="text-danger"></span>
+                      
                     </td>
                 </tr>
                 <tr>
@@ -128,10 +129,9 @@ else
                         <td>@patientHistory[i].Consultation_Date</td>
                         <td>@docName</td>
                         <td>@patientHistory[i].Consultation_Remarks</td>
-                    </tr>
-}
+                    </tr>}
 
-            }
+                                    }
 
                                 </table> } }
 
