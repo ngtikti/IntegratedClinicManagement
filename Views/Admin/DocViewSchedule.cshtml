@@ -11,50 +11,63 @@
 
 </head>
 <body>
+    <h1 id="main" class="alert alert-success">Doctor Schedule</h1>
+
+    @if (Model.Count() != 0)
+    {
+        <table class="table" style="width:500px;">
+            <thead>
+                <tr>
+
+                    <th class="thead-dark">
+                        @Html.DisplayNameFor(model => model.Time)
+                    </th>
+
+                    <th>Status</th>
+                    <th>Patient Name</th>
+                </tr>
+            </thead>
+            <tbody>
 
 
-    <table class="table" style="width:500px;">
-        <thead>
-            <tr>
-
-                <th class="thead-dark">
-                    @Html.DisplayNameFor(model => model.Time)
-                </th>
-
-                <th>Status</th>
-                <th>Patient Name</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in Model)
-            {
-            <tr>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Time)
-                </td>
-
-
-                @if (item.Patient_Id == null)
+                @foreach (var item in Model)
                 {
-                    <td><p>Empty</p></td>
-                    <td><p>-</p></td>
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+
+
+                        @if (item.Patient_Id == null)
+                        {
+                            <td><p>Empty</p></td>
+                            <td><p>-</p></td>
+                        }
+                        @if (item.Patient_Id != null)
+                        {
+                            <td><p>Booked</p></td>
+
+                            <td>@Html.DisplayFor(modelItem => item.Patient.Name)</td>
+                        }
+                        @*@Html.ActionLink("Book", "BookSlotForPatient", new { timeid = item.Timeslot_Id, docid = item.Doctor_Id })*@
+
+
+                    </tr>
+
                 }
-                @if (item.Patient_Id != null)
-                {
-                    <td><p>Booked</p></td>
+            </tbody>
+        </table>
+    }
 
-                    <td>@Html.DisplayFor(modelItem => item.Patient.Name)</td>
-                }
-                @*@Html.ActionLink("Book", "BookSlotForPatient", new { timeid = item.Timeslot_Id, docid = item.Doctor_Id })*@
+    @if (Model.Count() == 0)
+    {
+        <section class="alert alert-danger">
 
-
-            </tr>
-            }
-        </tbody>
-    </table>
-
+            @ViewBag.Message
+            @Html.ActionLink("here", "DocAddTimeSlot", "Admin", new { docid = TempData.Peek("DocId") })
+        </section>
+       }
     <section>
         @*@Html.ActionLink("Book Appointment", "BookAppointment", new { str = Model.Username })*@
 

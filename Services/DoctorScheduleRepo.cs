@@ -100,7 +100,7 @@ namespace ClinicManagementProject.Services
             if (_context.DoctorSchedules.Where(ds=>ds.Doctor_Id==id).Count() == 0)
             {
                 _logger.LogInformation("No schedule found");
-                return null;
+                return _context.DoctorSchedules.Include(c => c.Patient).Where(ds => ds.Doctor_Id == id).ToList();
             }
             return _context.DoctorSchedules.Include(c => c.Patient).Where(ds => ds.Doctor_Id == id).ToList();
         }
@@ -111,17 +111,19 @@ namespace ClinicManagementProject.Services
             ICollection<DoctorSchedule> schedules = GetAll(sch.Doctor_Id);
             bool timetaken = false;
             int count = 0;
-            foreach (var item in schedules)
+            if(schedules.Count() != 0)
             {
-                if (t.Time == item.Time)
+                foreach (var item in schedules)
                 {
-                    timetaken = true;
-                    break;
+                    if (t.Time == item.Time)
+                    {
+                        timetaken = true;
+                        break;
+                    }
+                    if (item.Timeslot_Id > 0)
+                        count = item.Timeslot_Id;
                 }
-                if (item.Timeslot_Id > 0)
-                    count = item.Timeslot_Id;
             }
-
             if (timetaken == true)
                 return false;
             else

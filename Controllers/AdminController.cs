@@ -139,14 +139,17 @@ namespace ClinicManagementProject.Controllers
             TempData["DocId"] = docid;
 
             ICollection<DoctorSchedule> doctorSchedule = _scheduleRepo.GetAll(docid); //getting all the doctorschedule according to doctorId
-
+            if (doctorSchedule.Count() == 0)
+            {
+                @ViewBag.Message = "No Schedule Found, Add a Schedule? Click ";
+            }
             return View(doctorSchedule); //displaying only the slots where patient_id has not been input
         }
 
         public ActionResult DocAddTimeSlot(int docid)
         {
             DoctorScheduleViewModel timeSlot = new DoctorScheduleViewModel();
-
+            
             return View(timeSlot);
         }
 
