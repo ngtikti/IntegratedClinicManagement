@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d/hYSmIyDGrxoGcOcrckGT2fO9X7S9/uYXHEJ7OFTfEOYmrtTU4g0fMt+1W0CU9IFuTsFFlwcgXMabasfzrMdQ==",
+  "dgSpecHash": "KJjp35FPWKxMulS3PMRpc6toRL/b7k0+VBWlianLn/6FzC3KUPHjxRiZFZZHY2RUpVzC2XLga2Z20jV41hjHxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ngtik\\Downloads\\ClinicProject-Integrated-main\\ClinicManagementProject.csproj",
+  "projectFilePath": "C:\\Users\\ngtik\\Dropbox\\dotnet Work\\IntegratedClinicManagement\\ClinicManagementProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ngtik\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ngtik\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

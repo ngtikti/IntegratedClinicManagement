@@ -7189,11 +7189,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ngtik\\Downloads\\ClinicProject-Integrated-main\\ClinicManagementProject.csproj",
+      "projectUniqueName": "C:\\Users\\ngtik\\Dropbox\\dotnet Work\\IntegratedClinicManagement\\ClinicManagementProject.csproj",
       "projectName": "ClinicManagementProject",
-      "projectPath": "C:\\Users\\ngtik\\Downloads\\ClinicProject-Integrated-main\\ClinicManagementProject.csproj",
+      "projectPath": "C:\\Users\\ngtik\\Dropbox\\dotnet Work\\IntegratedClinicManagement\\ClinicManagementProject.csproj",
       "packagesPath": "C:\\Users\\ngtik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ngtik\\Downloads\\ClinicProject-Integrated-main\\obj\\",
+      "outputPath": "C:\\Users\\ngtik\\Dropbox\\dotnet Work\\IntegratedClinicManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

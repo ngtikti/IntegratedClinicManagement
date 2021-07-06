@@ -9,7 +9,7 @@ namespace ClinicManagementProject.Models
         {
         }
         [Required(ErrorMessage = "Schedule Time cannot be empty")]
-        [RegularExpression(@"^[0-9]{4}\s-\s[0 - 9]{4}$",
+        [RegularExpression(@"^[0-9]{4}-[0-9]{4}$",
             ErrorMessage = "Enter a Valid Time with Format: XXXX - XXXX")]
         [Display(Name = "Time")]
         public string EnteredTime { get; set; } //since this is string, cannot be passed into database. so using a viewmodel to operate around that wont be passed into database
