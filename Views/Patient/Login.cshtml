@@ -1,20 +1,21 @@
 ﻿@model ClinicManagementProject.Models.PatientViewModel
 
+@{Layout = "~/views/Doctor/_Layout.cshtml";}
+
 <head>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <h1 id="main" class="alert alert-danger">Login Here</h1>
+    <h1 id="main" class="alert alert-danger">Patient Login</h1>
     <div class="row">
         <div class="col-md-4">
             @using (Html.BeginForm("Login", "Patient", FormMethod.Post))
             {
-                @Html.LabelFor(m => m.Username, htmlAttributes: new { @class = "form-control" })
+@Html.LabelFor(m => m.Username, htmlAttributes: new { @class = "form-control" })
                 @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.LabelFor(m => m.EnteredPassword, htmlAttributes: new { @class = "form-control" })
-                @Html.PasswordFor(m => m.EnteredPassword, htmlAttributes: new { @class = "form-control" })
-                <button class="btn btn-success">Login</button>
-            }
+                                @Html.LabelFor(m => m.EnteredPassword, htmlAttributes: new { @class = "form-control" })
+                                                @Html.PasswordFor(m => m.EnteredPassword, htmlAttributes: new { @class = "form-control" })
+                                                                <button class="btn btn-success">Login</button>            }
         </div>
     </div>
     <section>
@@ -23,7 +24,7 @@
     <section class="alert alert-danger">
         @ViewData["Message"]
     </section>
-    
+
 </body>
 
 </html> 

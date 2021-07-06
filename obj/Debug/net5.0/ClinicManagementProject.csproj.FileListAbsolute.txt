@@ -814,23 +814,8 @@ C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\s
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ClinicManagementProject.TagHelpers.input.cache
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ClinicManagementProject.TagHelpers.output.cache
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ClinicManagementProject.RazorCoreGenerate.cache
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\AdminConsole.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocAddTimeSlot.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocMain.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocRegNew.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocViewSchedule.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\Login.cshtml.g.cs
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatAllCon.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatMain.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPaidAllPass .cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPaidPass.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPayment.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatRegNew.cshtml.g.cs
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatSearch.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatSearchAll.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatViewAll.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\Register.cshtml.g.cs
-C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\_AdminLayout.cshtml.g.cs
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Doctor\AboutUs.cshtml.g.cs
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Doctor\ConsultationDetail.cshtml.g.cs
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Doctor\ConsultationUpdate.cshtml.g.cs
@@ -866,3 +851,18 @@ C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\C
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ref\ClinicManagementProject.dll
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ClinicManagementProject.pdb
 C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\ClinicManagementProject.genruntimeconfig.cache
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\AdminConsole.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocAddTimeSlot.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocMain.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocRegNew.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\DocViewSchedule.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\Login.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatMain.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPaidAllPass .cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPaidPass.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatPayment.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatRegNew.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatSearchAll.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\PatViewAll.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\Register.cshtml.g.cs
+C:\Users\ngtik\Dropbox\dotnet Work\IntegratedClinicManagement\obj\Debug\net5.0\Razor\Views\Admin\_AdminLayout.cshtml.g.cs

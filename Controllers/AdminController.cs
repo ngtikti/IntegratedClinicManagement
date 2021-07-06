@@ -55,7 +55,7 @@ namespace ClinicManagementProject.Controllers
                     //log in success, means username and password correct
                     ViewData["Message"] = "Welcome!";
                     TempData["AdminUsername"] = admin.Username;
-                    return RedirectToAction("AdminConsole", "Admin", admin); //view and controller syntax...and passing actual admin to the next...seems like ? to pass to next is too long due to password...have to only pass a part of it
+                    return RedirectToAction("AdminConsole", "Admin"); //view and controller syntax...and passing actual admin to the next...seems like ? to pass to next is too long due to password...have to only pass a part of it
                 }
                 else
                 {
@@ -91,7 +91,7 @@ namespace ClinicManagementProject.Controllers
         }
 
 
-        public ActionResult AdminConsole(Admin a)
+        public ActionResult AdminConsole()
         {
             Admin ad = _adminRepo.Get(Convert.ToString(TempData.Peek("AdminUsername")));
             ViewData["Message"] = "Welcome " + ad.Name;

@@ -76,7 +76,7 @@ namespace ClinicManagementProject.Services
                 }
                 else
                 {
-                    _repo.Add(myDoctor);  //with the password and passwordsalt added too
+                    bool flag = _repo.Add(myDoctor);  //with the password and passwordsalt added too
                     return true; //username ok, created
                 }
             }

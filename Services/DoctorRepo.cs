@@ -20,7 +20,20 @@ namespace ClinicManagementProject.Services
 
         public bool Add(Doctor t)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Doctors.Add(t);
+                _context.SaveChanges();
+                _logger.LogInformation("Doctor registered", t);
+                return true;
+            }
+
+            catch (Exception e)
+            {
+                _logger.LogError("Could not register Doctor " + DateTime.Now.ToString());
+                _logger.LogError("The details " + e.Message);
+            }
+            return false;
         }
 
         public bool Delete(string k)
@@ -38,7 +51,11 @@ namespace ClinicManagementProject.Services
             var doctor = _context.Doctors.SingleOrDefault(p => p.Username == k);
             return doctor;
         }
-
+        public Doctor Get(int docId)
+        {
+            var doctor = _context.Doctors.SingleOrDefault(p => p.Doctor_Id == docId);
+            return doctor;
+        }
         public ICollection<Doctor> GetAll()
         {
             if (_context.Doctors.Count() == 0)

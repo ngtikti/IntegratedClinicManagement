@@ -84,6 +84,26 @@ namespace ClinicManagementProject.Services
             return null;
         }
 
+        public ConsultationDetail Get(List<int> k)
+        {
+            try
+            {
+                //user TimeSlot ID to get timeSlot
+                var docSchedule = _context.DoctorSchedules.SingleOrDefault(ds => ds.Timeslot_Id == k[0] && ds.Doctor_Id == k[2]);
+
+                //use docSchedule time with other param to fetch Consultation detail
+                var consultationDetail = _context.ConsultationDetails.SingleOrDefault(ds => ds.Timeslot == docSchedule.Time && ds.Patient_Id == k[1] && ds.Doctor_Id == k[2] && ds.Consultation_Status.ToUpper() == "OPENED");
+                //var consultationDetail = _context.ConsultationDetails.SingleOrDefault(ds => ds.Patient_Id == k[0] && ds.Doctor_Id == k[1]);
+
+                return consultationDetail;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("No slot with this id " + k + " " + e.Message);
+            }
+            return null;
+        }
+
         public ConsultationDetail Get(string k)
         {
             var detail = _context.ConsultationDetails.SingleOrDefault(p => p.Consultation_Id == Convert.ToInt32(k));
@@ -114,9 +134,9 @@ namespace ClinicManagementProject.Services
 
         public ICollection<ConsultationDetail> GetAll(int id)
         {
-            if (_context.ConsultationDetails.Count() == 0)
+            if (_context.ConsultationDetails.Where(ds => ds.Doctor_Id == id).Count() == 0)
             {
-                _logger.LogInformation("No Consultation record");
+                _logger.LogInformation("No schedule found");
                 return null;
             }
             return _context.ConsultationDetails.Include(c => c.Patient).Include(c=> c.Doctor).Where(p => p.Patient_Id == id).ToList();
