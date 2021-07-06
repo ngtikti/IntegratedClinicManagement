@@ -24,18 +24,19 @@
                             @Html.ActionLink("Home Page", "PatientConsole", "Patient", null, new { @class = "nav-link" })
                         </li>
                         @*<li class="nav-item">
-                            @Html.ActionLink("Sign In", "Login", "User", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Sign up", "Register", "User", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Home Page", "Index", "Home", null, new { @class = "nav-link" })
-                        </li>*@
-                        <li class="nav-item">
-                            @Html.ActionLink("Log out", "Index", "Home")
-                        </li>
+                    @Html.ActionLink("Sign In", "Login", "User", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Sign up", "Register", "User", null, new { @class = "nav-link" })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Home Page", "Index", "Home", null, new { @class = "nav-link" })
+                </li>*@
                     </ul>
+                </div>
+                <div style="text-align:right;">
+                    @Html.ActionLink("Logout", "Login", "Patient", null, new { @class = "nav-link-dark" })
+
                 </div>
             </nav>
         </div>
