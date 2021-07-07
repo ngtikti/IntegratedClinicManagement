@@ -44,7 +44,7 @@
 
 
                 @*<label class="form-control">@ViewBag.RetypePassword</label>
-                    <input type="password" value=@ViewBag.RetypePassword class="form-control" id="txtReType" onblur="passwordCheck()" />*@
+            <input type="password" value=@ViewBag.RetypePassword class="form-control" id="txtReType" onblur="passwordCheck()" />*@
 
                 @Html.LabelFor(m => m.RetypeEnteredPassword, htmlAttributes: new { @class = "form-control" })
                 @Html.PasswordFor(m => m.RetypeEnteredPassword, htmlAttributes: new { @class = "form-control" })
@@ -57,6 +57,11 @@
                 @Html.LabelFor(m => m.Gender, htmlAttributes: new { @class = "form-control" })
                 @Html.EditorFor(m => m.Gender, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(m => m.Specialization, htmlAttributes: new { @class = "form-control" })
+                @Html.EditorFor(m => m.Specialization, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Specialization, "", new { @class = "text-danger" })
+
 
                 @Html.LabelFor(m => m.Age, htmlAttributes: new { @class = "form-control" })
                 @Html.EditorFor(m => m.Age, new { htmlAttributes = new { @class = "form-control" } })
