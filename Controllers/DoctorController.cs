@@ -58,7 +58,10 @@ namespace ClinicManagementProject.Controllers
                 //ConsultationDetail consultationDetail = _consultationDetailrepo.Get(new List<int>() { timeSlotId, patId, docId }); //getting all the doctorschedule
                 DoctorSchedule docsch = _doctorschedulerepo.GetAll().SingleOrDefault(ds => ds.Timeslot_Id == timeSlotId && ds.Doctor_Id == docId);
                 string timeslot = docsch.Time;
-                ConsultationDetail consultationDetail = _consultationDetailrepo.GetAll().SingleOrDefault(cd => cd.Timeslot == timeslot && cd.Doctor_Id == docId && cd.Patient_Id == patId);
+                //ConsultationDetail consultationDetail = _consultationDetailrepo.GetAll().SingleOrDefault(cd => cd.Timeslot == timeslot && cd.Doctor_Id == docId && cd.Patient_Id == patId);
+                IEnumerable<ConsultationDetail> cds = _consultationDetailrepo.GetAll().Where(cd => cd.Timeslot == timeslot && cd.Doctor_Id == docId && cd.Patient_Id == patId).ToList();
+                ConsultationDetail consultationDetail = cds.LastOrDefault();
+                
                 if (consultationDetail == null)
                 {
                     ViewData["Message"] = "Unable to get your Consultation Detail (TimeSlotID:" + timeSlotId + " , Patient ID: " + patId + ", DoctorID:" + docId + "), it might have already completed";
