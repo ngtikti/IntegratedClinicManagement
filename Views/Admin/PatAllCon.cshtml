@@ -82,7 +82,7 @@
                         <td> @Html.TextAreaFor(model => item.Consultation_Remarks, new { @readonly = true }) </td>
 
                         <td>
-                            <p>@Html.ActionLink("View Consultations", "PatCon", new { conid = item.Consultation_Id })</p>
+                            @*<p>@Html.ActionLink("View Consultations", "PatCon", new { conid = item.Consultation_Id })</p>*@
                             @if (item.Bill != null && item.Consultation_Status.ToLower() == "pending payment")
                             {
                                 

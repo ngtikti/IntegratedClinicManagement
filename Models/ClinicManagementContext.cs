@@ -41,9 +41,6 @@ namespace ClinicManagementProject.Models
                 }
                 ); 
 
-
-
-
             modelBuilder.Entity<Patient>().HasData(
                 new Patient()
                 {
