@@ -1,6 +1,6 @@
 ﻿@model ClinicManagementProject.Models.PatientViewModel
 
-
+<html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/lib/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -56,10 +56,9 @@
 
                 @Html.LabelFor(m => m.Phone, htmlAttributes: new { @class = "form-control" })
                 @Html.EditorFor(m => m.Phone, new { htmlAttributes = new { @class = "form-control" } })
+
+                <button class="btn btn-primary">Create Account</button>}
             }
-
-
-
 
                                                                                                                                                                                                                                                                                                                 <button class="btn btn-primary">Create Account</button>}
         </div>

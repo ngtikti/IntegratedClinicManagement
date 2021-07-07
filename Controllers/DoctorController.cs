@@ -132,14 +132,16 @@ namespace ClinicManagementProject.Controllers
                 if(consStatus.ToUpper() == "PENDING PAYMENT")
                 {
                     //get all schedule for the doctor
-                    //Compare it for the timeslot and Patient, then Delete
+                    //Compare it for the timeslot and Patient, then remove the Patient ID from the schedule
                     ICollection<DoctorSchedule> allDocSchedule = _doctorschedulerepo.GetAll(consDetail.Doctor_Id);
                     foreach (var schItem in allDocSchedule)
                     { 
-                        //if Schedule Doc ID, Patient ID is matching, then Delete it
+                        //if Schedule Doc ID, Patient ID is matching, then Delete it Mona on 7th July
                         if(schItem.Doctor_Id == consDetail.Doctor_Id && schItem.Patient_Id == consDetail.Patient_Id && schItem.Time == consDetail.Timeslot)
                         {
-                            schRemoved = _doctorschedulerepo.Delete(new List<int>() { schItem.Timeslot_Id, consDetail.Doctor_Id });                            
+                            //schRemoved = _doctorschedulerepo.Delete(new List<int>() { schItem.Timeslot_Id, consDetail.Doctor_Id });                            
+                            schItem.Patient_Id = null;
+                            schRemoved = _doctorschedulerepo.Edit(new List<int>() { schItem.Timeslot_Id, consDetail.Doctor_Id }, schItem);
                         }                       
                     }
                     if(schRemoved)
