@@ -28,6 +28,10 @@ namespace ClinicManagementProject.Services
             if (doc != null)
             {
                 using var hmac = new HMACSHA512(doc.PasswordSalt); //using doc passwordsalt as salt for keyed in admin
+                if (t.EnteredPassword == null) //if got username, but never key in pw
+                {
+                    return false;
+                }
                 var checkPass = hmac.ComputeHash(Encoding.UTF8.GetBytes(t.EnteredPassword));//encrypting into byte[] for keyed in password in login field...
                 //checking if the byte[] of doc is the same as the byte[] of admin
                 for (int i = 0; i < checkPass.Length; i++)

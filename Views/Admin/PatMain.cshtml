@@ -18,17 +18,17 @@
 
     <section>
 
-        <p>@Html.ActionLink("Search a Patient", "PatSearchAll")</p>
+        <p>@Html.ActionLink("Search a Patient", "PatSearchAll", new { str = Model}, new { @class = "btn btn-outline-info" })</p>
     </section>
     <section>
 
-        <p>@Html.ActionLink("Pending Payment Tickets", "PatPayment")</p>
+        <p>@Html.ActionLink("Pending Payment Tickets", "PatPayment", new { str = Model }, new { @class = "btn btn-outline-info" })</p>
 
     </section>
     <section>
         @*@Html.ActionLink("Book Appointment", "BookAppointment", new { str = Model.Username })*@
 
-        <p>@Html.ActionLink("Register New Patient", "PatRegNew")</p>
+        <p>@Html.ActionLink("Register New Patient", "PatRegNew", new { str = Model}, new { @class = "btn btn-outline-info" })</p>
 
 
 

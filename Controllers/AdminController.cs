@@ -267,7 +267,8 @@ namespace ClinicManagementProject.Controllers
         }
         public ActionResult PatAllCon(int patid)
         {
-            ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll(patid).ToList();
+            //ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll(patid).ToList(); // will give error as int in getall is pertaining to docid, not patid
+            ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll().Where(cd=>cd.Patient_Id==patid).ToList();
             return View(patAllCons);
         }
 
