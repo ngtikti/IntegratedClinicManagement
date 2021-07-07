@@ -215,7 +215,15 @@ namespace ClinicManagementProject.Controllers
         {
             string pend = "Pending Payment";
             //ICollection<ConsultationDetail> cDetail = _consultRepo.GetAll(pend);
-            ICollection<ConsultationDetail> cDetail = _consultRepo.GetAll().Where(p => p.Consultation_Status.ToLower() == pend.ToLower()).ToList();
+            ICollection<ConsultationDetail> cDetail = _consultRepo.GetAll();
+            if (cDetail == null)
+            {
+                cDetail = new List<ConsultationDetail>(); //have to have something to pass to view
+            }
+            else
+            {
+                cDetail = _consultRepo.GetAll().Where(p => p.Consultation_Status.ToLower() == pend.ToLower()).ToList();
+            }
             return View(cDetail);
         }
 
@@ -268,7 +276,23 @@ namespace ClinicManagementProject.Controllers
         public ActionResult PatAllCon(int patid)
         {
             //ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll(patid).ToList(); // will give error as int in getall is pertaining to docid, not patid
-            ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll().Where(cd=>cd.Patient_Id==patid).ToList();
+            ICollection<ConsultationDetail> patAllCons = _consultRepo.GetAll();
+            if(patAllCons == null)
+            {
+                patAllCons = new List<ConsultationDetail>(); //because view cant take null
+            }
+            else
+            {
+                patAllCons = _consultRepo.GetAll().Where(cd => cd.Patient_Id == patid).ToList();
+            }
+            //if (_consultRepo.GetAll().Where(cd => cd.Patient_Id == patid) == null)
+            //{
+            //    patAllCons = new List<ConsultationDetail>();
+            //}
+            //else
+            //{
+            //    patAllCons = _consultRepo.GetAll().Where(cd => cd.Patient_Id == patid).ToList();
+            //}
             return View(patAllCons);
         }
 
