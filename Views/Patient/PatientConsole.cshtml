@@ -10,29 +10,22 @@
     <section class="alert alert-success">
         @ViewData["Message"]
     </section>
-    <section>
+    <div class="d-flex justify-content-center">
+
         @Html.ActionLink("Book Appointment", "BookAppointment", new { str = Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
-    <br />
-    <section>
-        @Html.ActionLink("View Upcoming Appointments", "ViewBookedAppointments", new { hi=Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
-    <br />
-    <section>
+        &nbsp &nbsp &nbsp
+        @Html.ActionLink("View Upcoming Appointments", "ViewBookedAppointments", new { hi = Model.Username }, new { @class = "btn btn-outline-info" })
+        &nbsp &nbsp &nbsp
         @Html.ActionLink("View Past Reports", "ViewPastReport", new { hi = Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
+    </div>
     <br />
-    <section>
+    <div class="d-flex justify-content-center">
         @Html.ActionLink("Pay Outstanding Bills", "PendingPaymentList", new { hi = Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
-    <br />
-    <section>
+        &nbsp &nbsp &nbsp
         @Html.ActionLink("Update Particulars", "UpdateParticulars", new { hi = Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
-    <br />
-    <section>
+        &nbsp &nbsp &nbsp
         @Html.ActionLink("Change Password", "ChangePassword", new { hi = Model.Username }, new { @class = "btn btn-outline-info" })
-    </section>
+    </div>
     <section class="alert alert-danger">
         @ViewData["BookingMessage"]
         @ViewData["DeleteBookingMessage"]
