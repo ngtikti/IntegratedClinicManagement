@@ -149,15 +149,19 @@ namespace ClinicManagementProject.Controllers
         public ActionResult DocAddTimeSlot(int docid)
         {
             DoctorScheduleViewModel timeSlot = new DoctorScheduleViewModel();
-            
+            //timeSlot.Doctor_Id = Convert.ToInt32(TempData.Peek("DocId")); // new line
+            TempData["DocId"] = docid;
+            timeSlot.Doctor_Id = docid;
             return View(timeSlot);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]// giving issue
         public ActionResult DocAddTimeSlot(DoctorScheduleViewModel timeSlot)
         {
-            if (ModelState.IsValid)
+            timeSlot.Doctor_Id= Convert.ToInt32(TempData.Peek("DocId"));
+            if (ModelState.IsValid)// giving issue
+
             {
                 DoctorSchedule newTimeSlot = timeSlot;
                 newTimeSlot.Time = timeSlot.EnteredTime;
@@ -171,7 +175,7 @@ namespace ClinicManagementProject.Controllers
                 return View();
             }
             DoctorScheduleViewModel timeSlote = new DoctorScheduleViewModel();
-
+            timeSlote.Doctor_Id = Convert.ToInt32(TempData.Peek("DocId")); // new line
             return View(timeSlote);
         }
 
