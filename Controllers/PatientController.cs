@@ -254,7 +254,7 @@ namespace ClinicManagementProject.Controllers
             ICollection<ConsultationDetail> pastAppointments;
             if (consultationDetails != null)
             {
-                pastAppointments = consultationDetails.Where(cd => cd.Patient_Id == patid && cd.Consultation_Status == "closed").ToList(); //view those appointments that were closed
+                pastAppointments = consultationDetails.Where(cd => (cd.Patient_Id == patid && cd.Consultation_Status == "closed") || (cd.Patient_Id == patid && cd.Consultation_Status == "Consultation Closed")).ToList(); //view those appointments that were closed
             }
             else
             {
